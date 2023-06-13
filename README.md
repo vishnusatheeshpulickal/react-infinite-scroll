@@ -4,7 +4,7 @@ This repository showcases different techniques for implementing infinite scroll 
 
 ## Installation
 
-1. Clone the repository: `git clone [repository-url]`
+1. Clone the repository: `git clone https://github.com/vishnusatheeshpulickal/react-infinite-scroll.git`
 2. Navigate to the project directory: `cd infinite-scroll-react`
 3. Install dependencies: `npm install` or `yarn install`
 
