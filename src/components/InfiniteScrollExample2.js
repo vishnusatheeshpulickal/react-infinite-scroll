@@ -3,7 +3,7 @@ import axios from "axios";
 import ProductCard from "./ProductCard";
 import Loader from "./Loader";
 
-const Example2 = () => {
+const InfiniteScrollExample2 = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [index, setIndex] = useState(2);
@@ -12,15 +12,14 @@ const Example2 = () => {
     if (isLoading) return;
 
     setIsLoading(true);
-    try {
-      const response = await axios.get(
-        `https://api.escuelajs.co/api/v1/products?offset=${index}0&limit=12`
-      );
-      setItems((prevItems) => [...prevItems, ...response.data]);
-      setIndex((prevIndex) => prevIndex + 1);
-    } catch (error) {
-      console.log(error);
-    }
+
+    axios
+      .get(`https://api.escuelajs.co/api/v1/products?offset=${index}0&limit=12`)
+      .then((res) => {
+        setItems((prevItems) => [...prevItems, ...res.data]);
+      })
+      .catch((err) => console.log(err));
+    setIndex((prevIndex) => prevIndex + 1);
 
     setIsLoading(false);
   }, [index, isLoading]);
@@ -69,4 +68,4 @@ const Example2 = () => {
   );
 };
 
-export default Example2;
+export default InfiniteScrollExample2;

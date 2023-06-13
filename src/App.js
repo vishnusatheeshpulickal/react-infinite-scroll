@@ -1,12 +1,12 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Example3 from "./components/Example3";
+import InfiniteScrollExample3 from "./components/InfiniteScrollExample1";
 
 function App() {
   return (
     <div className='App'>
       <Navbar />
-      <Example3 />
+      <InfiniteScrollExample3 />
     </div>
   );
 }
